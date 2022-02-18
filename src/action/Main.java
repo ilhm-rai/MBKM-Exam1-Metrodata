@@ -1,11 +1,6 @@
 package action;
 
-import daos.Dao;
-import daos.RegionDao;
-import java.util.Optional;
 import java.util.Scanner;
-import java.util.function.Supplier;
-import models.Region;
 import tools.DbConnection;
 
 /*
@@ -48,6 +43,9 @@ public class Main {
                     break;
                 case 2:
                     tableAction = new CountryAction();
+                    break;
+                case 4:
+                    tableAction = new DepartmentAction();
                     break;
                 case 7: {
                     stop = true;
