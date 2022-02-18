@@ -13,11 +13,11 @@ public class Department {
     private int departmentId, manager, location;
     private String departmentName;
 
-    public Department(int departmentId, int manager, int location, String departmentName) {
+    public Department(int departmentId, String departmentName, int manager, int location) {
         this.departmentId = departmentId;
+        this.departmentName = departmentName;
         this.manager = manager;
         this.location = location;
-        this.departmentName = departmentName;
     }
 
     public int getDepartmentId() {
