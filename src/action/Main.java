@@ -46,6 +46,9 @@ public class Main {
                 case 1:
                     tableAction = new RegionAction();
                     break;
+                case 2:
+                    tableAction = new CountryAction();
+                    break;
                 case 7: {
                     stop = true;
                     break;
