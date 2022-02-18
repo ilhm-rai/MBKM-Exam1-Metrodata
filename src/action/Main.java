@@ -66,11 +66,17 @@ public class Main {
                     name = objStr.nextLine();
                     count = obj.nextInt();
                     regionDao.update(region, new String[]{name, String.valueOf(count)});
+                    break;
                 }
                 case 4: {
                     id = obj.nextLong();
                     Region region = getRegion(id);
                     regionDao.delete(region);
+                    break;
+                }
+                case 6: {
+                    stop = true;
+                    break;
                 }
             }
         }
