@@ -53,12 +53,14 @@ public class DepartmentDao implements Dao<Department> {
     @Override
     public void save(Department department) {
         try {
+            int id = this.generateId();
             PreparedStatement psmt = connection.prepareStatement("INSERT INTO country(id, name, manager, location) VALUES(?,?,?,?)");
-            psmt.setInt(1, this.generateId());
+            psmt.setInt(1, id);
             psmt.setString(2, department.getDepartmentName());
             psmt.setInt(3, department.getManager());
             psmt.setInt(3, department.getLocation());
             psmt.execute();
+            department.setDepartmentId(id);
             departments.add(department);
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
