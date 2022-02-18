@@ -58,18 +58,18 @@ public class RegionDao implements Dao<Region> {
             PreparedStatement psmt = connection.prepareStatement("INSERT INTO region(name, count) VALUES(?,?)", Statement.RETURN_GENERATED_KEYS);
             psmt.setString(1, region.getRegionName());
             psmt.setInt(2, region.getCount());
-            
+
             int affectedRows = psmt.executeUpdate();
-            if(affectedRows > 0) {
-                try(ResultSet rs = psmt.getGeneratedKeys()) {
-                    if(rs.next()) {
+            if (affectedRows > 0) {
+                try (ResultSet rs = psmt.getGeneratedKeys()) {
+                    if (rs.next()) {
                         id = rs.getInt(1);
                     }
                 } catch (SQLException e) {
                     System.out.println("Error: " + e.getMessage());
                 }
             }
-            
+
             region.setRegionId(id);
             regions.add(region);
         } catch (SQLException e) {
@@ -98,7 +98,14 @@ public class RegionDao implements Dao<Region> {
 
     @Override
     public void delete(Region region) {
-        regions.remove(region);
+        try {
+            PreparedStatement psmt = connection.prepareStatement("DELETE FROM region WHERE id=?");
+            psmt.setInt(1, region.getRegionId());
+            psmt.execute();
+            regions.remove(region);
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
 }
