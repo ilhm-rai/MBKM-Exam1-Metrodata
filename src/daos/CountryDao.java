@@ -41,7 +41,7 @@ public class CountryDao implements Dao<Country> {
 
     @Override
     public Optional get(long id) {
-        return Optional.ofNullable(countries.get((int) --id));
+        return Optional.ofNullable(countries.get((int) id));
     }
     
     @Override
