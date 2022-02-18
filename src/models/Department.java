@@ -12,12 +12,16 @@ package models;
 public class Department {
     private int departmentId, manager, location;
     private String departmentName;
-
-    public Department(int departmentId, String departmentName, int manager, int location) {
-        this.departmentId = departmentId;
+    
+    public Department(String departmentName, int manager, int location) {
         this.departmentName = departmentName;
         this.manager = manager;
         this.location = location;
+    }
+    
+    public Department(int departmentId, String departmentName, int manager, int location) {
+        this(departmentName, manager, location);
+        this.departmentId = departmentId;
     }
 
     public int getDepartmentId() {
