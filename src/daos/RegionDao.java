@@ -43,7 +43,7 @@ public class RegionDao implements Dao<Region> {
 
     @Override
     public Optional<Region> get(long id) {
-        return Optional.ofNullable(regions.get((int) --id));
+        return Optional.ofNullable(regions.get((int) id));
     }
 
     @Override

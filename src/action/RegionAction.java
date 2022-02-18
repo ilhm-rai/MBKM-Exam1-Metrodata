@@ -7,9 +7,10 @@ package action;
 
 import daos.Dao;
 import daos.RegionDao;
-import java.sql.Connection;
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 import models.Region;
 import tools.DbConnection;
 
@@ -66,7 +67,13 @@ public class RegionAction implements Action {
     }
     
     private static Region getRegion(long id) {
-        Optional<Region> region = regionDao.get(id);
+        List<Region> regions = regionDao.getAll();
+        int countryId = IntStream.range(0, regions.size())
+                .filter(i -> regions.get(i).getRegionId() == id)
+                .findFirst()
+                .getAsInt();
+        
+        Optional<Region> region = regionDao.get(countryId);
         return region.orElseGet(() -> new Region("non-existing region", 0));
     }
 }
