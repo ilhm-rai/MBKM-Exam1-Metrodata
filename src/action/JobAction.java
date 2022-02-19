@@ -60,6 +60,9 @@ public class JobAction implements Action {
         System.out.print("Update job(Id): ");
         jobId = objStr.nextLine();
         Job job = getJob(jobId);
+        System.out.println(
+                job.getJobId() + " | " + job.getTitle() + " | " + job.getMinSalary() + " | " + job.getMaxSalary()
+        );
         System.out.print("Change id: ");
         String changedJobId = objStr.nextLine();
         System.out.print("Title: ");

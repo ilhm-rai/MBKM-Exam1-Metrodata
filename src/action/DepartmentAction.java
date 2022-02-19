@@ -58,6 +58,9 @@ public class DepartmentAction implements Action {
         System.out.println("Update department(Id): ");
         id = obj.nextInt();
         Department department = getDepartment(id);
+        System.out.println(
+                department.getDepartmentId() + " | " + department.getDepartmentName() + " | " + department.getManager() + " | " + department.getLocation()
+        );
         System.out.print("Change department name: ");
         name = objStr.nextLine();
         System.out.print("Change manager: ");

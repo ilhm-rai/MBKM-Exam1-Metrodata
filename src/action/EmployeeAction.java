@@ -91,7 +91,14 @@ public class EmployeeAction implements Action {
         try {
             System.out.print("Update employee(Id): ");
             employeeId = obj.nextInt();
-            Employee employee = getEmployee(employeeId);
+            Employee e = getEmployee(employeeId);
+            SimpleDateFormat DateFor = new SimpleDateFormat("yyyy-MM-dd");
+            hireDateStr = DateFor.format(e.getHireDate());
+            System.out.println(
+                    e.getEmployeeId() + " | " + e.getFirstName() + " | " + e.getLastName() + " | "
+                            + e.getEmail() + " | " + e.getPhoneNumber() + " | " + hireDateStr + " | "
+                            + e.getJob() + " | " + e.getSalary() + " | " + e.getComissionPct() + " | " + e.getManager() + " | " + e.getDepartment()
+            );
             System.out.print("Change first name: ");
             firstName = objStr.nextLine();
             System.out.print("Change last name: ");
@@ -113,7 +120,7 @@ public class EmployeeAction implements Action {
             manager = obj.nextInt();
             System.out.print("Change department id: ");
             department = obj.nextInt();
-            employeeDao.update(employee, new String[]{firstName, lastName, email, phoneNumber, hireDateStr, job, String.valueOf(salary), String.valueOf(comissionPct), String.valueOf(manager), String.valueOf(department)});
+            employeeDao.update(e, new String[]{firstName, lastName, email, phoneNumber, hireDateStr, job, String.valueOf(salary), String.valueOf(comissionPct), String.valueOf(manager), String.valueOf(department)});
         } catch (ParseException ex) {
             Logger.getLogger(EmployeeAction.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage());

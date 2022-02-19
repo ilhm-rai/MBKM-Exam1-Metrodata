@@ -9,7 +9,6 @@ import daos.Dao;
 import daos.CountryDao;
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalInt;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 import models.Country;
@@ -59,6 +58,7 @@ public class CountryAction implements Action {
         System.out.print("Update country(Id): ");
         id = objStr.nextLine();
         Country country = getCountry(id);
+        System.out.println(country.getCountryId() + " | " + country.getName() + " | " + country.getRegion());
         System.out.print("Change id: ");
         String changedId = objStr.nextLine();
         System.out.print("Change country name: ");

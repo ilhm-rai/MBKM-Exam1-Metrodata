@@ -63,7 +63,11 @@ public class LocationAction implements Action {
     public void update() {
         System.out.print("Update location(Id): ");
         id = obj.nextInt();
-        Location location = getLocation(id);
+        Location l = getLocation(id);
+        System.out.println(
+                l.getLocationId() + " | " + l.getStreetAddress() + " | " + l.getPostalCode() + " | " 
+                        + l.getCity() + " | " +  l.getStateProvince() + " | " + l.getCountry()
+        );
         System.out.print("Change street address: ");
         streetAddress = objStr.nextLine();
         System.out.print("Change postal code: ");
@@ -74,7 +78,7 @@ public class LocationAction implements Action {
         stateProvince = objStr.nextLine();
         System.out.print("Change country: ");
         country = objStr.nextLine();
-        locationDao.update(location, new String[] {streetAddress, postalCode, city, stateProvince, country});
+        locationDao.update(l, new String[] {streetAddress, postalCode, city, stateProvince, country});
     }
 
     @Override
