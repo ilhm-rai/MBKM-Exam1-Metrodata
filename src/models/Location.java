@@ -13,13 +13,17 @@ public class Location {
     private int locationId;
     private String streetAddress, postalCode, city, stateProvince, country;
 
-    public Location(int locationId, String streetAddress, String postalCode, String city, String stateProvince, String country) {
-        this.locationId = locationId;
+    public Location(String streetAddress, String postalCode, String city, String stateProvince, String country) {
         this.streetAddress = streetAddress;
         this.postalCode = postalCode;
         this.city = city;
         this.stateProvince = stateProvince;
         this.country = country;
+    }
+    
+    public Location(int locationId, String streetAddress, String postalCode, String city, String stateProvince, String country) {
+        this(streetAddress, postalCode, city, stateProvince, country);
+        this.locationId = locationId;
     }
 
     public int getLocationId() {
