@@ -67,9 +67,9 @@ public class JobAction implements Action {
         String changedJobId = objStr.nextLine();
         System.out.print("Title: ");
         title = objStr.nextLine();
-        System.out.print("Title: ");
+        System.out.print("Min salary: ");
         minSalary = obj.nextDouble();
-        System.out.print("Title: ");
+        System.out.print("Max salary: ");
         maxSalary = obj.nextDouble();
         jobDao.update(job, new String[] {String.valueOf(changedJobId), title, String.valueOf(minSalary), String.valueOf(maxSalary)});
     }
