@@ -17,7 +17,7 @@ public class Employee {
     private Date hireDate;
     private double salary, comissionPct;
 
-    public Employee(int manager, int department, String firstName, String lastName, String email, String phoneNumber, String job, Date hireDate, double salary, double comissionPct) {
+    public Employee(String firstName, String lastName, String email, String phoneNumber, Date hireDate, String job, double salary, double comissionPct, int manager, int department) {
         this.manager = manager;
         this.department = department;
         this.firstName = firstName;
@@ -30,8 +30,8 @@ public class Employee {
         this.comissionPct = comissionPct;
     }
     
-    public Employee(int employeeId, int manager, int department, String firstName, String lastName, String email, String phoneNumber, String job, Date hireDate, double salary, double comissionPct) {
-        this(manager, department, firstName, lastName, email, phoneNumber, job, hireDate, salary, comissionPct);
+    public Employee(int employeeId, String firstName, String lastName, String email, String phoneNumber, Date hireDate, String job, double salary, double comissionPct, int manager, int department) {
+        this(firstName,lastName, email, phoneNumber, hireDate, job, salary, comissionPct, manager, department);
         this.employeeId = employeeId;
     }
 
