@@ -149,7 +149,7 @@ public class EmployeeDao implements Dao<Employee> {
     }
     
     private int generateId() {
-        String query = "SELECT id FROM job ORDER BY id DESC LIMIT 1";
+        String query = "SELECT id FROM employee ORDER BY id DESC LIMIT 1";
         try {
             ResultSet rs = this.connection
                     .prepareStatement(query)
