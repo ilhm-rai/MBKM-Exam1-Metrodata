@@ -27,7 +27,7 @@ public class LocationDao implements Dao<Location> {
     public LocationDao(Connection connection) {
         this.connection = connection;
 
-        String query = "SELECT * FROM department";
+        String query = "SELECT * FROM location";
         try {
             ResultSet rs = this.connection
                     .prepareStatement(query)
