@@ -26,6 +26,7 @@ public class Main {
         Scanner obj = new Scanner(System.in);
 
         while (!stop) {
+            stopMethod = false;
             System.out.println("Choose table menu");
             System.out.println("(1) Region\n"
                     + "(2) Country\n"
@@ -55,7 +56,7 @@ public class Main {
                     break;
                 }
                 default:
-                    System.out.println("Method doesn't exist!");
+                    System.out.println("Wrong input, try again!");
                     break;
             }
 
@@ -97,7 +98,7 @@ public class Main {
                         break;
                     }
                     default: {
-                        System.out.println("Method doesn't exist!");
+                        System.out.println("Wrong input, try again!");
                         break;
                     }
                 }
