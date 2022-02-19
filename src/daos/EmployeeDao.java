@@ -62,7 +62,7 @@ public class EmployeeDao implements Dao<Employee> {
     public void save(Employee employee) {
         try {
             int id = this.generateId();
-            PreparedStatement psmt = connection.prepareStatement("INSERT INTO employee(id, first_name, last_name, email, phone_number, hire_date, job, salary, comission_pcr, manager, department) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement psmt = connection.prepareStatement("INSERT INTO employee(id, first_name, last_name, email, phone_number, hire_date, job, salary, comission_pct, manager, department) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
             psmt.setInt(1, id);
             psmt.setString(2, employee.getFirstName());
             psmt.setString(3, employee.getLastName());
