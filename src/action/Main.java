@@ -54,6 +54,9 @@ public class Main {
                 case 5:
                     tableAction = new JobAction();
                     break;
+                case 6:
+                    tableAction = new EmployeeAction();
+                    break;
                 case 7: {
                     stop = true;
                     break;
