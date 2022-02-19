@@ -44,6 +44,9 @@ public class Main {
                 case 2:
                     tableAction = new CountryAction();
                     break;
+                case 3:
+                    tableAction = new LocationAction();
+                    break;
                 case 4:
                     tableAction = new DepartmentAction();
                     break;
