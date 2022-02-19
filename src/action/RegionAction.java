@@ -45,25 +45,31 @@ public class RegionAction implements Action {
 
     @Override
     public void insert() {
+        System.out.print("Region name: ");
         name = objStr.nextLine();
+        System.out.print("Count: ");
         count = obj.nextInt();
         regionDao.save(new Region(name, count));
     }
 
     @Override
     public void update() {
+        System.out.print("Update region(Id): ");
         id = obj.nextLong();
         Region region = getRegion(id);
         System.out.println(
                 region.getRegionId() + " | " + region.getRegionName() + " | " + region.getCount()
         );
+        System.out.print("Change name: ");
         name = objStr.nextLine();
+        System.out.print("Change count: ");
         count = obj.nextInt();
         regionDao.update(region, new String[]{name, String.valueOf(count)});
     }
 
     @Override
     public void delete() {
+        System.out.print("Delete region(Id): ");
         id = obj.nextLong();
         Region region = getRegion(id);
         regionDao.delete(region);
