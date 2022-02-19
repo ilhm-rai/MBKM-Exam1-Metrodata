@@ -79,7 +79,7 @@ public class JobDao implements Dao<Job> {
         job.setMinSalary(Objects.requireNonNull(
                 minSalary, "Min salary cannot be null"));
         job.setMaxSalary(Objects.requireNonNull(
-                minSalary, "Max salary cannot be null"));
+                maxSalary, "Max salary cannot be null"));
         try {
             PreparedStatement psmt = connection.prepareStatement("UPDATE job SET id=?, title=?, min_salary=?, max_salary=? WHERE id=?");
             psmt.setString(1, id);
