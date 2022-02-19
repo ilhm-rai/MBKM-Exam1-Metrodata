@@ -54,6 +54,9 @@ public class RegionAction implements Action {
     public void update() {
         id = obj.nextLong();
         Region region = getRegion(id);
+        System.out.println(
+                region.getRegionId() + " | " + region.getRegionName() + " | " + region.getCount()
+        );
         name = objStr.nextLine();
         count = obj.nextInt();
         regionDao.update(region, new String[]{name, String.valueOf(count)});
