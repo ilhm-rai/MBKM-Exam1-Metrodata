@@ -51,6 +51,9 @@ public class Main {
                 case 4:
                     tableAction = new DepartmentAction();
                     break;
+                case 5:
+                    tableAction = new JobAction();
+                    break;
                 case 7: {
                     stop = true;
                     break;
